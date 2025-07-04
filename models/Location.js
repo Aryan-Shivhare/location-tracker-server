@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
 const locationSchema = new mongoose.Schema({
-  latitude: Number,
-  longitude: Number,
-  battery: Number,
+  tagId: String,
+  latitude: String,
+  longitude: String,
+  speed: String,
+  battery: String,
   timestamp: { type: Date, default: Date.now }
 });
 

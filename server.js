@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGO_URI, {
 // POST endpoint to receive location
 app.post("/location", async (req, res) => {
   try {
-    const { latitude, longitude, battery } = req.body;
-    const loc = new Location({ latitude, longitude, battery });
+    const { tagId, latitude, longitude, speed, battery } = req.body;
+    const loc = new Location({ tagId, latitude, longitude, speed, battery });
     await loc.save();
     res.status(201).json({ message: "Location saved" });
   } catch (err) {
